@@ -1,8 +1,15 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 
-app.use(cors());
+app.use(express.static("dist"));
+
+app.use(
+  cors({
+    origin: "https://fso-05-backend.onrender.com",
+  })
+);
 
 app.use(express.json());
 
